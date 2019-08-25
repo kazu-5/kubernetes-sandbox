@@ -177,3 +177,35 @@ kubectl get svc echo
 NAME   TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE
 echo   ClusterIP   10.109.197.35   <none>        80/TCP    11s
 ```
+
+```
+kubectl run -i --rm --tty debug --image=gihyodocker/fundamental:0.1.0 --restart=Never -- bash -il
+If you don't see a command prompt, try pressing enter.
+debug:/# curl http://echo/
+Hello Docker!!debug:/# 
+```
+
+```
+kubectl get pod -l app=echo -l release=summer
+NAME                READY   STATUS    RESTARTS   AGE
+echo-summer-66ccb   2/2     Running   0          32m
+echo-summer-7bg4n   2/2     Running   0          32m
+```
+
+```
+kubectl logs -f echo-summer-66ccb -c echo
+2019/08/25 05:55:32 start server
+2019/08/25 06:21:15 received request
+```
+
+```
+kubectl logs -f echo-summer-7bg4n -c echo
+2019/08/25 05:55:34 start server
+```
+
+```
+```
+
+```
+```
+
