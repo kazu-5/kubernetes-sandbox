@@ -112,4 +112,30 @@ REVISION  CHANGE-CAUSE
 2         kubectl apply --filename=simple-deployment.yaml --record=true
 ```
 
+```
+kubectl rollout history deployment echo --revision=1
+deployment.extensions/echo with revision #1
+Pod Template:
+  Labels:	app=echo
+	pod-template-hash=58b7bc5f6c
+  Annotations:	kubernetes.io/change-cause: kubectl apply --filename=simple-deployment.yaml --record=true
+  Containers:
+   nginx:
+    Image:	gihyodocker/nginx:latest
+    Port:	80/TCP
+    Host Port:	0/TCP
+    Environment:
+      BACKEND_HOST:	localhost:8080
+    Mounts:	<none>
+   echo:
+    Image:	gihyodocker/echo:patched
+    Port:	8080/TCP
+    Host Port:	0/TCP
+    Environment:
+      HOGE:	fuga
+    Mounts:	<none>
+  Volumes:	<none>
+```
+
+
 
