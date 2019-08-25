@@ -142,4 +142,8 @@ kubectl rollout undo deployment echo
 deployment.extensions/echo rolled back
 ```
 
+```
+kubectl delete -f simple-deployment.yaml
+deployment.apps "echo" deleted
+```
 
