@@ -5,13 +5,19 @@ Docker/Kubernetes 実践コンテナ開発入門(https://gihyo.jp/book/2018/978-
 ### 5.6 Pod
 ```
 kubectl apply -f simple-pod.yaml
+```
 
+```
 kubectl exec -it simple-echo sh -c nginx
 # 
+```
 
+```
 kubectl logs -f simple-echo -c echo
 2019/08/21 16:57:52 start server
+```
 
+```
 kubectl delete pod simple-echo
 pod "simple-echo" deleted
 ```
@@ -26,3 +32,21 @@ replicaset.apps "echo" deleted
 
 ```
 
+### 5.8 Deployment
+```
+kubectl apply -f simple-deployment.yaml --record
+deployment.apps/echo created
+
+kubectl get pods,replicaset,deployment --selector app=echo
+NAME                        READY   STATUS    RESTARTS   AGE
+pod/echo-58b7bc5f6c-5fstn   2/2     Running   0          112s
+pod/echo-58b7bc5f6c-85wtw   2/2     Running   0          112s
+pod/echo-58b7bc5f6c-fqmz5   2/2     Running   0          112s
+
+NAME                                    DESIRED   CURRENT   READY   AGE
+replicaset.extensions/echo-58b7bc5f6c   3         3         3       112s
+
+NAME                         READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.extensions/echo   3/3     3            3           112s
+
+```
