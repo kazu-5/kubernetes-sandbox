@@ -137,5 +137,9 @@ Pod Template:
   Volumes:	<none>
 ```
 
+```
+kubectl rollout undo deployment echo
+deployment.extensions/echo rolled back
+```
 
 
