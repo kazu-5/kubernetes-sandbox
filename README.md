@@ -232,9 +232,13 @@ ingress.extensions/echo created
 ```
 
 ```
+kubectl get ingress
+NAME   HOSTS              ADDRESS   PORTS   AGE
+echo   ch05.gihyo.local             80      50s
 ```
 
 ```
+curl http://localhost -H 'Host: ch05.gihyo.local'
 ```
 
 ```
