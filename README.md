@@ -166,3 +166,14 @@ NAME                READY   STATUS    RESTARTS   AGE
 echo-summer-66ccb   2/2     Running   0          3m58s
 echo-summer-7bg4n   2/2     Running   0          3m58s
 ```
+
+```
+kubectl apply -f simple-service.yaml 
+service/echo created
+```
+
+```
+kubectl get svc echo
+NAME   TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE
+echo   ClusterIP   10.109.197.35   <none>        80/TCP    11s
+```
