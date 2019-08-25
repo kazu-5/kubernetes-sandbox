@@ -218,12 +218,17 @@ echo   NodePort   10.109.197.35   <none>        80:31346/TCP   37m
 ```
 
 ```
+simple-service.yamlのspecの「type: NodePort」を削除
 ```
 
 ```
+kubectl apply -f simple-deployment.yaml
+deployment.apps/echo created
 ```
 
 ```
+kubectl apply -f simple-ingress.yaml 
+ingress.extensions/echo created
 ```
 
 ```
