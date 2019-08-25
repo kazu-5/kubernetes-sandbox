@@ -204,8 +204,38 @@ kubectl logs -f echo-summer-7bg4n -c echo
 ```
 
 ```
+simple-service.yamlのspecに「type: NodePort」を追加
+```
+
+```
+kubectl get svc echo
+NAME   TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE
+echo   ClusterIP   10.109.197.35   <none>        80/TCP    31m
 ```
 
 ```
 ```
 
+```
+```
+
+```
+```
+
+```
+```
+
+```
+```
+
+```
+```
+
+```
+```
+
+```
+```
+
+```
+```
