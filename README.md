@@ -84,4 +84,23 @@ NAME                         READY   UP-TO-DATE   AVAILABLE   AGE
 deployment.extensions/echo   4/4     4            4           19m
 ```
 
+```
+simple-deployment.yamlの「nginx」containerのimageを「gihyodocker/nginx:latest」から「image: gihyodocker/nginx:patched」に変更
+```
+
+```
+kubectl apply -f simple-deployment.yaml --record
+deployment.apps/echo configured
+```
+
+```
+kubectl get pod --selector app=echo
+NAME                    READY   STATUS             RESTARTS   AGE
+echo-58b7bc5f6c-5fstn   2/2     Running            0          28m
+echo-58b7bc5f6c-85wtw   2/2     Running            0          28m
+echo-58b7bc5f6c-fqmz5   2/2     Running            0          28m
+echo-58b7bc5f6c-z6g29   0/2     Terminating        0          8m41s
+echo-7ff6b5c99f-472wj   1/2     ImagePullBackOff   0          32s
+echo-7ff6b5c99f-l8txf   1/2     ImagePullBackOff   0          32s
+```
 
