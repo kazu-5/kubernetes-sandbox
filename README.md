@@ -3,6 +3,7 @@ Docker/Kubernetes 実践コンテナ開発入門(https://gihyo.jp/book/2018/978-
 
 ## 5章
 ### 5.6
+```
 kubectl apply -f simple-pod.yaml
 
 $ kubectl exec -it simple-echo sh -c nginx
@@ -13,7 +14,7 @@ $ kubectl logs -f simple-echo -c echo
 
 $ kubectl delete pod simple-echo
 pod "simple-echo" deleted
-
+```
 
 ### 5.7
 
