@@ -26,7 +26,9 @@ pod "simple-echo" deleted
 ```
 kubectl apply -f simple-replicaset.yaml 
 replicaset.apps/echo created
+```
 
+```
 kubectl delete -f simple-replicaset.yaml
 replicaset.apps "echo" deleted
 
@@ -36,7 +38,9 @@ replicaset.apps "echo" deleted
 ```
 kubectl apply -f simple-deployment.yaml --record
 deployment.apps/echo created
+```
 
+```
 kubectl get pods,replicaset,deployment --selector app=echo
 NAME                        READY   STATUS    RESTARTS   AGE
 pod/echo-58b7bc5f6c-5fstn   2/2     Running   0          112s
