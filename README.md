@@ -17,4 +17,9 @@ pod "simple-echo" deleted
 ```
 
 ### 5.7
+```
+$ kubectl apply -f simple-replicaset.yaml 
+replicaset.apps/echo created
+
+```
 
