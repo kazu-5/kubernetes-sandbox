@@ -104,3 +104,12 @@ echo-7ff6b5c99f-472wj   1/2     ImagePullBackOff   0          32s
 echo-7ff6b5c99f-l8txf   1/2     ImagePullBackOff   0          32s
 ```
 
+```
+kubectl rollout history deployment echo
+deployment.extensions/echo 
+REVISION  CHANGE-CAUSE
+1         kubectl apply --filename=simple-deployment.yaml --record=true
+2         kubectl apply --filename=simple-deployment.yaml --record=true
+```
+
+
