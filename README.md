@@ -147,3 +147,22 @@ kubectl delete -f simple-deployment.yaml
 deployment.apps "echo" deleted
 ```
 
+### 5.9 Service
+```
+kubectl apply -f simple-replicaset-with-label.yaml 
+replicaset.apps/echo-spring created
+replicaset.apps/echo-summer created
+```
+
+```
+kubectl get pod -l app=echo -l release=spring
+NAME                READY   STATUS    RESTARTS   AGE
+echo-spring-8j482   2/2     Running   0          3m49s
+```
+
+```
+kubectl get pod -l app=echo -l release=summer
+NAME                READY   STATUS    RESTARTS   AGE
+echo-summer-66ccb   2/2     Running   0          3m58s
+echo-summer-7bg4n   2/2     Running   0          3m58s
+```
