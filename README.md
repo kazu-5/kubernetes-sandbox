@@ -31,7 +31,6 @@ replicaset.apps/echo created
 ```
 kubectl delete -f simple-replicaset.yaml
 replicaset.apps "echo" deleted
-
 ```
 
 ### 5.8 Deployment
@@ -52,5 +51,12 @@ replicaset.extensions/echo-58b7bc5f6c   3         3         3       112s
 
 NAME                         READY   UP-TO-DATE   AVAILABLE   AGE
 deployment.extensions/echo   3/3     3            3           112s
+```
 
 ```
+kubectl rollout history deployment echo
+deployment.extensions/echo 
+REVISION  CHANGE-CAUSE
+1         kubectl apply --filename=simple-deployment.yaml --record=true
+```
+
